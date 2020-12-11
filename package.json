@@ -1,0 +1,23 @@
+{
+  "name": "debate_with_friends",
+  "version": "1.0.0",
+  "description": "Debate Chat App",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StevenMartinez1/Debate.git"
+  },
+  "author": "Steven Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StevenMartinez1/Debate/issues"
+  },
+  "homepage": "https://github.com/StevenMartinez1/Debate#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6"
+  }
+}
