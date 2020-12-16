@@ -25,19 +25,31 @@
 
 	</div>
 
-	<div id="chat">
+	<div id='chat-format'>
 
-		<div id='send-msg-format'>
-			<div id="send-msg">
-				Message @User
-			</div>
+		<div id="chat">
+
 		</div>
 
+			<div id='send-msg-format'>
+				<form>
+					<div id='box'>
+					<div id ='send-msg-box'>
+						<input type="text" id='send-msg' />
+					</div>
+					<div id='submit-box'>
+						<input type="submit" id="form-submit-button" value="submit" />
+					</div>
+				</div>
+				</form>
+			</div>
 	</div>
 
 
+
 	<footer>
-		<script src="static/client.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+  	<script src="static/client.js"></script>
 	</footer>
 </body>
 
