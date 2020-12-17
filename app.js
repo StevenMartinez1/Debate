@@ -18,9 +18,21 @@ io.on('connection', function(socket){
   socket.on('newUser', function(data){
     console.log("New User: ", data.name);
     users.addUser(socket.id, data.name);
+    socket.emit('newUserID', socket.id);
   });
 
-  
+  socket.on('sendMessageToServer', function(data){
+    messageData = {
+      name: data.name,
+      message: data.message,
+      id: socket.id
+    };
+
+    console.log(messageData);
+    socket.emit('sendMessageToUsers', messageData );
+    socket.broadcast.emit('sendMessageToUsers', messageData );
+
+  });
 
   socket.on('disconnect', function(){
     console.log('Disconnecting');
