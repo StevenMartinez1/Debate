@@ -39,8 +39,21 @@ function displayMessage(name, id, message){
     div = 'receivedMessage';
   }
 
+  if(div === 'sentMessage'){
+    var ul = document.getElementById('messageList');
+    var li = document.createElement('li');
+    li.appendChild(document.createTextNode(message));
+    li.setAttribute("id", "sentMessage");
+    ul.appendChild(li);
+  }
 
-
+  if(div === 'receivedMessage'){
+    var ul = document.getElementById('messageList');
+    var li = document.createElement('li');
+    li.appendChild(document.createTextNode(message));
+    li.setAttribute("id", "receivedMessage");
+    ul.appendChild(li);
+  }
 
 
 
