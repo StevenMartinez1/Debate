@@ -5,6 +5,7 @@ var http = require('http')
 var server = http.createServer(app);
 const io = require('socket.io')(server);
 const users = require('./static/users.js');
+const moment = require('moment');
 
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -22,17 +23,19 @@ io.on('connection', function(socket){
   });
 
   socket.on('sendMessageToServer', function(data){
+    var sentTime = moment().format('LT');
     messageData = {
       name: data.name,
       message: data.message,
-      id: socket.id
+      id: socket.id,
+      time: sentTime
     };
-
     console.log(messageData);
     socket.emit('sendMessageToUsers', messageData );
     socket.broadcast.emit('sendMessageToUsers', messageData );
-
   });
+
+
 
   socket.on('disconnect', function(){
     console.log('Disconnecting');

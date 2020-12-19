@@ -1,11 +1,13 @@
 
 #body{
 	display: flex;
+	height: 100%;
+	width: 100%
 }
 
 #search{
 	display: flex;
-	height: 100vh;
+	//height: 100vh;
 	width: 250px;
 	background-color: #2E2D2D;
 }
@@ -45,7 +47,7 @@
 	border: 1px solid #eee;
 	border-radius: 20px;
 	text-shadow:none;
-	padding: 5px;
+	padding: 3px;
 	margin: 2px;
 }
 

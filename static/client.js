@@ -19,13 +19,14 @@ document.getElementById('form-submit-button').addEventListener("click", function
 
 socket.on('sendMessageToUsers', function(data){
   console.log('In sendMessageToUsers: ', name);
-  displayMessage(data.name, data.id, data.message);
+  displayMessage(data.name, data.id, data.message, data.time);
 });
 
-function displayMessage(name, id, message){
+function displayMessage(name, id, message, time){
   console.log(name);
   console.log(id);
   console.log(message);
+  console.log(time);
 
   var div = "";
   if(id === userID)
@@ -50,11 +51,14 @@ function displayMessage(name, id, message){
   if(div === 'receivedMessage'){
     var ul = document.getElementById('messageList');
     var li = document.createElement('li');
+    //li.appendChild(document.createTextNode(name + ': \r\n ' + message));
+    li.appendChild(document.createTextNode(name));
+    var br = document.createElement("br");
+    li.appendChild(document.createTextNode(br));
     li.appendChild(document.createTextNode(message));
     li.setAttribute("id", "receivedMessage");
     ul.appendChild(li);
   }
-
 
 
 
