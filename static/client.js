@@ -1,5 +1,8 @@
 
 var name = prompt("What is your name?");
+if (name === '' || name === null){
+  name = 'Anonymous Debater';
+}
 var socket = io();
 var userID = "";
 
@@ -23,42 +26,47 @@ socket.on('sendMessageToUsers', function(data){
 });
 
 function displayMessage(name, id, message, time){
-  console.log(name);
-  console.log(id);
-  console.log(message);
-  console.log(time);
 
   var div = "";
-  if(id === userID)
-  {
-    console.log('Sender');
+  if(id === userID){
     div = 'sentMessage';
   }
-  else
-  {
-    console.log('Reciever');
+  else{
     div = 'receivedMessage';
   }
 
-  if(div === 'sentMessage'){
-    var ul = document.getElementById('messageList');
-    var li = document.createElement('li');
-    li.appendChild(document.createTextNode(message));
-    li.setAttribute("id", "sentMessage");
-    ul.appendChild(li);
-  }
+  var ul = document.getElementById('messageList');
+  var li = document.createElement('li');
+  var metadataDiv = document.createElement('div');
 
-  if(div === 'receivedMessage'){
-    var ul = document.getElementById('messageList');
-    var li = document.createElement('li');
-    //li.appendChild(document.createTextNode(name + ': \r\n ' + message));
-    li.appendChild(document.createTextNode(name));
-    var br = document.createElement("br");
-    li.appendChild(document.createTextNode(br));
-    li.appendChild(document.createTextNode(message));
-    li.setAttribute("id", "receivedMessage");
-    ul.appendChild(li);
+  metadataDiv.innerHTML = '<span id="messageName">' + name + '</span> <span id="messageTime">' + time + '</span>';
+
+  li.appendChild(metadataDiv);
+  ul.appendChild(li);
+  li = document.createElement('li');
+  li.appendChild(document.createTextNode(message));
+
+  if(div === 'sentMessage'){
+    li.setAttribute("id", "sentMessage");
   }
+  else{
+    li.setAttribute("id", "receivedMessage");
+  }
+  ul.appendChild(li);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
