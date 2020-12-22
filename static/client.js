@@ -54,7 +54,7 @@ function displayMessage(name, id, message, time){
   }
   ul.appendChild(li);
 
-
+  window.scrollTo(0,document.body.scrollHeight);
 
 
 

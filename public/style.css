@@ -9,19 +9,44 @@
 	display: flex;
 	width: 250px;
 	background-color: #2E2D2D;
+	border-right: 1px solid white;
+	padding: 10px;
 }
 
 #chat-format{
 	display: flex;
 	flex-direction: column;
-	height: 100vh;
+	min-height: 100vh;
 	width: 100%;
 	background-color: #674C4C;
+}
+
+#top-right {
+    flex-shrink: 0;
+    display: inline-flex;
+		background-color: #2E2D2D;
+		height: 75px;
+		border-bottom: 1px solid white;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+}
+
+#topicTitle{
+	color: white;
+	font-size: 20px;
+}
+
+#topic{
+	color: white;
+	font-size: 30px;
 }
 
 #messageList{
 	display: flex;
 	flex-direction: column;
+	padding-top: 10px;
+	padding-left: 10px;
 }
 
 #messageName{
@@ -43,39 +68,16 @@
 	color: white;
 	padding: 5px;
 	font-size: 20px;
+	padding-bottom: 10px;
 }
 
 #receivedMessage{
 	color: white;
 	padding: 5px;
 	font-size: 20px;
+	padding-bottom: 10px;
 }
 
-/*
-#sentMessage{
-	display: flex;
-	justify-content: flex-end;
-	background: #016ABC;
-	color: #fff;
-	border: 1px solid #eee;
-	border-radius: 20px;
-	text-shadow:none;
-	padding: 3px;
-	margin: 2px;
-}
-
-#receivedMessage{
-	display: flex;
-	justify-content: flex-start;
-	background: #016ABC;
-	color: #fff;
-	border: 1px solid #eee;
-	border-radius: 20px;
-	text-shadow:none;
-	padding: 3px;
-	margin: 2px;
-}
-*/
 #chat{
 	display: flex;
 	width: 100%;
@@ -89,7 +91,7 @@
 	align-items: flex-end;
 	padding: 0px;
 	flex-direction: row;
-	//background-color: black;
+	flex: 1;
 }
 
 #box{
